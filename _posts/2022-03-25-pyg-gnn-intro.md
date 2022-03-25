@@ -2,7 +2,7 @@
 layout: article
 title: PyTorch Geometric 教程1 - 介绍
 key: pyg-gnn-intro
-tags: PyG, GNN
+tags: PyG
 category: blog
 pageview: true
 date: 2022-03-25 10:00:00 +08:00
@@ -129,7 +129,7 @@ tensor([[ 0,  1],
 
 通过打印出 `edge_index`, 我们就可以理解 PyG 是怎样在内部表达图连通性的了. 我们可以看到对于每条边, `edge_index` 都拥有两个索引的 元组 (tuple), 其中第一个值是源节点的索引, 而第二个值则是对应边的目标节点的索引.
 
-这种表达也被叫做 **COO 格式 (coordinate format)**, 它通常被用作表达稀疏矩阵. 与在密集表达内持有邻接信息 $\mathbf{A} \in \{0, 1\}^{|V| \times |V|}$ 不同, PyG 稀疏地表达图, 也就是只持有 $\mathbf{A}$ 里非零的坐标或值. 而且, PyG 并不区分有向和无向图, 它将无向图视作有向图的一个特例. 我们可以将这个图转化为 `networkx` 库格式, 来可视化它:
+这种表达也被叫做 **COO 格式 (coordinate format)**, 它通常被用作表达稀疏矩阵. 与在密集表达内持有邻接信息 $\mathbf{A} \in \{0, 1\}^{\| V \| \times \| V \|}$ 不同, PyG 稀疏地表达图, 也就是只持有 $\mathbf{A}$ 里非零的坐标或值. 而且, PyG 并不区分有向和无向图, 它将无向图视作有向图的一个特例. 我们可以将这个图转化为 `networkx` 库格式, 来可视化它:
 
 ```
 from torch_geometric.utils import to_networkx
@@ -265,5 +265,7 @@ for epoch in range(401):
 不难发现, 我们的3层GCN模型成功地区分了社区(线性的), 并准确地分类了大部分的节点.
 
 # 参考
+
+原博文链接: https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html
 
 Kipf, Thomas N., and Max Welling. "Semi-supervised classification with graph convolutional networks." arXiv preprint arXiv:1609.02907 (2016). https://arxiv.org/abs/1609.02907
