@@ -322,6 +322,8 @@ visualize(out, color=data.y)
 2. 当隐藏层特征维度增加, 或者层数增加, GCN 会有什么样的表现呢? 增加层数会有帮助吗?
 3. 我们可以尝试其他的GNN层来观察模型性能的改变. 比如我们使用 `GATConv` 层 (包含多头注意力 multi-head attention), 尝试写出一个两层的 `GAT` 模型, 其在 **第一层使用8头注意力**, 在 **第二层使用单头注意力**, 并且在每次 **内部调用时和外部调用后** 都设置 `dropout` 比例为0.6, 并且每个头的 `hidden_channels` 都是8. 
 
+---
+
 # 参考
 
 原博文链接: https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html

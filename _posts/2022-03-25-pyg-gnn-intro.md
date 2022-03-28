@@ -264,6 +264,8 @@ for epoch in range(401):
 
 不难发现, 我们的3层GCN模型成功地区分了社区(线性的), 并准确地分类了大部分的节点.
 
+---
+
 # 参考
 
 原博文链接: https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html
