@@ -262,7 +262,7 @@ Epoch: 170, Train Acc: 0.8000, Test Acc: 0.7632
 
 我们可以做得更好吗? 有不少的论文指出 [1, 2], **应用 领域归一化 (neighborhood normalization) 会降低 GNN 在区分某些图结构时的表达性**. Morris 等提出的方法 [2] 完全避免了领域归一化, 并且为了保留中心节点的信息, 他们添加了一个简单的 **残差连接 (skip-connection)** 到 GNN 的层中:
 
-$$\mathbf{x}_v^{(\ell+1)} = \mathbf{W}^{(\ell + 1)}_1 \mathbf{x}_v^{(\ell)} + \mathbf{W}^{(\ell + 1)}_2 \sum_{w \in \mathcal{N}(v)} \mathbf{x}_w^{(\ell)}$$
+$$\mathbf{x}_v^{(\ell+1)} = \mathbf{W}^{(\ell + 1)}_1 \mathbf{x}_v^{(\ell)} + \mathbf{W}^{(\ell + 1)}_2 \sum_{u \in \mathcal{N}(v)} \mathbf{x}_u^{(\ell)}$$
 
 在 PyG 中, 这一层叫做 `GraphConv`. 试试使用 `GraphConv` 来替换 `GCNConv`. 我们应该能得到接近 **82%** 的测试准确度.
 
