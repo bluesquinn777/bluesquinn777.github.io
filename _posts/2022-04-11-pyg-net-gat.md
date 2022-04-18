@@ -2,10 +2,10 @@
 layout: article
 title: PyG网络 (一) 图注意力神经网络GAT
 key: pyg-net-gat
-tags: 
+tags: PyG
 category: blog
 pageview: true
-date: 2022-04-30 10:00:00 +08:00
+date: 2022-04-11 10:00:00 +08:00
 ---
 
 # 下载并引入库
